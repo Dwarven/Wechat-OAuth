@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		DF46A64C1B673A6B003A3B0E /* WechatAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A64A1B673A6B003A3B0E /* WechatAccess.m */; };
+		DF46A6821B675177003A3B0E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A6701B675177003A3B0E /* AFHTTPRequestOperation.m */; };
+		DF46A6831B675177003A3B0E /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A6721B675177003A3B0E /* AFHTTPRequestOperationManager.m */; };
+		DF46A6841B675177003A3B0E /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A6741B675177003A3B0E /* AFHTTPSessionManager.m */; };
+		DF46A6851B675177003A3B0E /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A6771B675177003A3B0E /* AFNetworkReachabilityManager.m */; };
+		DF46A6861B675177003A3B0E /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A6791B675177003A3B0E /* AFSecurityPolicy.m */; };
+		DF46A6871B675177003A3B0E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A67B1B675177003A3B0E /* AFURLConnectionOperation.m */; };
+		DF46A6881B675177003A3B0E /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A67D1B675177003A3B0E /* AFURLRequestSerialization.m */; };
+		DF46A6891B675177003A3B0E /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A67F1B675177003A3B0E /* AFURLResponseSerialization.m */; };
+		DF46A68A1B675177003A3B0E /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A6811B675177003A3B0E /* AFURLSessionManager.m */; };
 		DF53E30F1B67389E00738E06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF53E30E1B67389E00738E06 /* main.m */; };
 		DF53E3121B67389E00738E06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF53E3111B67389E00738E06 /* AppDelegate.m */; };
 		DF53E3151B67389E00738E06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF53E3141B67389E00738E06 /* ViewController.m */; };
@@ -31,6 +40,25 @@
 /* Begin PBXFileReference section */
 		DF46A64A1B673A6B003A3B0E /* WechatAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WechatAccess.m; sourceTree = "<group>"; };
 		DF46A64B1B673A6B003A3B0E /* WechatAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAccess.h; sourceTree = "<group>"; };
+		DF46A66F1B675177003A3B0E /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		DF46A6701B675177003A3B0E /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		DF46A6711B675177003A3B0E /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		DF46A6721B675177003A3B0E /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		DF46A6731B675177003A3B0E /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		DF46A6741B675177003A3B0E /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		DF46A6751B675177003A3B0E /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		DF46A6761B675177003A3B0E /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		DF46A6771B675177003A3B0E /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		DF46A6781B675177003A3B0E /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		DF46A6791B675177003A3B0E /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		DF46A67A1B675177003A3B0E /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		DF46A67B1B675177003A3B0E /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		DF46A67C1B675177003A3B0E /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		DF46A67D1B675177003A3B0E /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		DF46A67E1B675177003A3B0E /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		DF46A67F1B675177003A3B0E /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		DF46A6801B675177003A3B0E /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		DF46A6811B675177003A3B0E /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		DF53E3091B67389E00738E06 /* Wechat-OAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wechat-OAuth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF53E30D1B67389E00738E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF53E30E1B67389E00738E06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,9 +96,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF46A66E1B675177003A3B0E /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				DF46A66F1B675177003A3B0E /* AFHTTPRequestOperation.h */,
+				DF46A6701B675177003A3B0E /* AFHTTPRequestOperation.m */,
+				DF46A6711B675177003A3B0E /* AFHTTPRequestOperationManager.h */,
+				DF46A6721B675177003A3B0E /* AFHTTPRequestOperationManager.m */,
+				DF46A6731B675177003A3B0E /* AFHTTPSessionManager.h */,
+				DF46A6741B675177003A3B0E /* AFHTTPSessionManager.m */,
+				DF46A6751B675177003A3B0E /* AFNetworking.h */,
+				DF46A6761B675177003A3B0E /* AFNetworkReachabilityManager.h */,
+				DF46A6771B675177003A3B0E /* AFNetworkReachabilityManager.m */,
+				DF46A6781B675177003A3B0E /* AFSecurityPolicy.h */,
+				DF46A6791B675177003A3B0E /* AFSecurityPolicy.m */,
+				DF46A67A1B675177003A3B0E /* AFURLConnectionOperation.h */,
+				DF46A67B1B675177003A3B0E /* AFURLConnectionOperation.m */,
+				DF46A67C1B675177003A3B0E /* AFURLRequestSerialization.h */,
+				DF46A67D1B675177003A3B0E /* AFURLRequestSerialization.m */,
+				DF46A67E1B675177003A3B0E /* AFURLResponseSerialization.h */,
+				DF46A67F1B675177003A3B0E /* AFURLResponseSerialization.m */,
+				DF46A6801B675177003A3B0E /* AFURLSessionManager.h */,
+				DF46A6811B675177003A3B0E /* AFURLSessionManager.m */,
+			);
+			name = AFNetworking;
+			path = Vendor/AFNetworking/AFNetworking;
+			sourceTree = "<group>";
+		};
 		DF53E3001B67389E00738E06 = {
 			isa = PBXGroup;
 			children = (
+				DF46A66E1B675177003A3B0E /* AFNetworking */,
 				DFF8055C1B673A3800DFFFFD /* SDKExport */,
 				DF53E30B1B67389E00738E06 /* Wechat-OAuth */,
 				DF53E3251B67389E00738E06 /* Wechat-OAuthTests */,
@@ -241,8 +297,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF53E3151B67389E00738E06 /* ViewController.m in Sources */,
+				DF46A6861B675177003A3B0E /* AFSecurityPolicy.m in Sources */,
 				DF53E3121B67389E00738E06 /* AppDelegate.m in Sources */,
+				DF46A6831B675177003A3B0E /* AFHTTPRequestOperationManager.m in Sources */,
+				DF46A6871B675177003A3B0E /* AFURLConnectionOperation.m in Sources */,
+				DF46A6821B675177003A3B0E /* AFHTTPRequestOperation.m in Sources */,
 				DF53E30F1B67389E00738E06 /* main.m in Sources */,
+				DF46A6881B675177003A3B0E /* AFURLRequestSerialization.m in Sources */,
+				DF46A6841B675177003A3B0E /* AFHTTPSessionManager.m in Sources */,
+				DF46A6851B675177003A3B0E /* AFNetworkReachabilityManager.m in Sources */,
+				DF46A6891B675177003A3B0E /* AFURLResponseSerialization.m in Sources */,
+				DF46A68A1B675177003A3B0E /* AFURLSessionManager.m in Sources */,
 				DF46A64C1B673A6B003A3B0E /* WechatAccess.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

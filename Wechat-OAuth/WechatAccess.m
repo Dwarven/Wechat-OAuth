@@ -8,6 +8,7 @@
 
 #import "WechatAccess.h"
 #import "WXApi.h"
+#import "AFNetworking.h"
 
 #define WECHAT_APP_ID         @"yourappid"
 #define WECHAT_APP_SECRET     @"yourappsecret"
@@ -43,7 +44,7 @@
 
 - (void)onResp:(BaseResp *)resp{
     if (0 == [resp errCode]) {
-        _result(YES, [(SendAuthResp*)resp code]);
+        [self getUserInfoWith:[(SendAuthResp*)resp code]];
     } else {
         id desc = [NSNull null];
         if (-2 == [resp errCode]) {
@@ -60,6 +61,33 @@
     SendAuthReq * req = [[SendAuthReq alloc] init];
     [req setScope:@"snsapi_userinfo"];
     [WXApi sendReq:req];
+}
+
+- (void)getUserInfoWith:(NSString *)code{
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
+    [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+    [manager POST:@"https://api.weixin.qq.com/sns/oauth2/access_token"
+       parameters:@{@"appid" : WECHAT_APP_ID,
+                    @"secret" : WECHAT_APP_SECRET,
+                    @"grant_type" : @"authorization_code",
+                    @"code" : code}
+          success:^(AFHTTPRequestOperation *operation,id responseObject) {
+              if ([responseObject isKindOfClass:[NSData class]]) {
+                  responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
+              }
+              [manager GET:@"https://api.weixin.qq.com/sns/userinfo"
+                parameters:responseObject
+                   success:^(AFHTTPRequestOperation *operation,id responseObject) {
+                       if ([responseObject isKindOfClass:[NSData class]]) {
+                           responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
+                       }
+                       _result(YES, responseObject);
+                   } failure:^(AFHTTPRequestOperation *operation,NSError *error) {
+                       
+                   }];
+          } failure:^(AFHTTPRequestOperation *operation,NSError *error) {
+              
+          }];
 }
 
 @end
