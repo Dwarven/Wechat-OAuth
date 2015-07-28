@@ -8,13 +8,13 @@
 
 #import "WechatAccess.h"
 #import "WXApi.h"
-#import "AFNetworking.h"
 
 #define WECHAT_APP_ID         @"yourappid"
 #define WECHAT_APP_SECRET     @"yourappsecret"
 
 @interface WechatAccess ()<WXApiDelegate>{
     void(^_result)(BOOL,id);
+    void(^_shareResult)(BOOL,id);
 }
 
 @end
@@ -43,16 +43,30 @@
 }
 
 - (void)onResp:(BaseResp *)resp{
-    if (0 == [resp errCode]) {
-        [self getUserInfoWith:[(SendAuthResp*)resp code]];
-    } else {
-        id desc = [NSNull null];
-        if (-2 == [resp errCode]) {
-            desc = @"ERR_USER_CANCEL";
-        } else if (-4 == [resp errCode]) {
-            desc = @"ERR_AUTH_DENIED";
+    if ([resp isKindOfClass:[SendMessageToWXResp class]]) {
+        if (0 == [resp errCode]) {
+            _shareResult(YES,nil);
+        } else {
+            id desc = [NSNull null];
+            if (-2 == [resp errCode]) {
+                desc = @"ERR_USER_CANCEL";
+            } else if (-4 == [resp errCode]) {
+                desc = @"ERR_AUTH_DENIED";
+            }
+            _shareResult(NO, [NSError errorWithDomain:@"kWechatShareErrorDomain" code:resp.errCode userInfo:@{NSLocalizedDescriptionKey:desc}]);
         }
-        _result(NO, [NSError errorWithDomain:@"kWechatResponseErrorDomain" code:resp.errCode userInfo:@{NSLocalizedDescriptionKey:desc}]);
+    } else if ([resp isKindOfClass:[SendAuthResp class]]) {
+        if (0 == [resp errCode]) {
+            [self getUserInfoWith:[(SendAuthResp*)resp code]];
+        } else {
+            id desc = [NSNull null];
+            if (-2 == [resp errCode]) {
+                desc = @"ERR_USER_CANCEL";
+            } else if (-4 == [resp errCode]) {
+                desc = @"ERR_AUTH_DENIED";
+            }
+            _result(NO, [NSError errorWithDomain:@"kWechatOAuthErrorDomain" code:resp.errCode userInfo:@{NSLocalizedDescriptionKey:desc}]);
+        }
     }
 }
 
@@ -88,6 +102,31 @@
           } failure:^(AFHTTPRequestOperation *operation,NSError *error) {
               
           }];
+}
+
+- (void)shareWithWebviewInTimeLineOrNot:(BOOL)inOrNot
+                                pageUrl:(NSString *)pageUrl
+                                  title:(NSString *)title
+                            description:(NSString *)description
+                                  image:(UIImage *)image
+                             completion:(void (^)(BOOL, id))shareResult{
+    _shareResult = shareResult;
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = title;
+    message.description = description;
+    [message setThumbImage:image];
+    
+    WXWebpageObject *ext = [WXWebpageObject object];
+    ext.webpageUrl = pageUrl;
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = inOrNot ? WXSceneTimeline : WXSceneSession;
+    
+    [WXApi sendReq:req];
 }
 
 @end

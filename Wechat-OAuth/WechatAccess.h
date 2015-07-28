@@ -18,4 +18,11 @@
 
 - (void)login:(void(^)(BOOL succeeded, id object))result;
 
+- (void)shareWithWebviewInTimeLineOrNot:(BOOL)inOrNot
+                                pageUrl:(NSString *)pageUrl
+                                  title:(NSString *)title
+                            description:(NSString *)description
+                                  image:(UIImage *)image
+                             completion:(void(^)(BOOL succeeded, id object))shareResult;
+
 @end
