@@ -9,7 +9,8 @@
 #import "WechatAccess.h"
 #import "WXApi.h"
 
-#define WECHAT_APP_ID         @"wxd930ea5d5a258f4f"
+#define WECHAT_APP_ID         @"yourappid"
+#define WECHAT_APP_SECRET     @"yourappsecret"
 
 @interface WechatAccess ()<WXApiDelegate>{
     void(^_result)(BOOL,id);

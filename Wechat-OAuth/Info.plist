@@ -27,7 +27,7 @@
 			<string>wechat</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxd930ea5d5a258f4f</string>
+				<string>yourappid</string>
 			</array>
 		</dict>
 	</array>
