@@ -14,6 +14,7 @@
 		DF53E31A1B67389E00738E06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF53E3191B67389E00738E06 /* Images.xcassets */; };
 		DF53E31D1B67389E00738E06 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF53E31B1B67389E00738E06 /* LaunchScreen.xib */; };
 		DF53E3291B67389E00738E06 /* Wechat_OAuthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF53E3281B67389E00738E06 /* Wechat_OAuthTests.m */; };
+		DFF805601B673A3900DFFFFD /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF8055D1B673A3800DFFFFD /* libWeChatSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,9 @@
 		DF53E3221B67389E00738E06 /* Wechat-OAuthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wechat-OAuthTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF53E3271B67389E00738E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF53E3281B67389E00738E06 /* Wechat_OAuthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wechat_OAuthTests.m; sourceTree = "<group>"; };
+		DFF8055D1B673A3800DFFFFD /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		DFF8055E1B673A3800DFFFFD /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		DFF8055F1B673A3800DFFFFD /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFF805601B673A3900DFFFFD /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +68,7 @@
 		DF53E3001B67389E00738E06 = {
 			isa = PBXGroup;
 			children = (
+				DFF8055C1B673A3800DFFFFD /* SDKExport */,
 				DF53E30B1B67389E00738E06 /* Wechat-OAuth */,
 				DF53E3251B67389E00738E06 /* Wechat-OAuthTests */,
 				DF53E30A1B67389E00738E06 /* Products */,
@@ -117,6 +123,16 @@
 				DF53E3271B67389E00738E06 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFF8055C1B673A3800DFFFFD /* SDKExport */ = {
+			isa = PBXGroup;
+			children = (
+				DFF8055D1B673A3800DFFFFD /* libWeChatSDK.a */,
+				DFF8055E1B673A3800DFFFFD /* WXApi.h */,
+				DFF8055F1B673A3800DFFFFD /* WXApiObject.h */,
+			);
+			path = SDKExport;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +367,10 @@
 				INFOPLIST_FILE = "Wechat-OAuth/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDKExport",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -363,6 +383,10 @@
 				INFOPLIST_FILE = "Wechat-OAuth/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDKExport",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
