@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF46A64C1B673A6B003A3B0E /* WechatAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46A64A1B673A6B003A3B0E /* WechatAccess.m */; };
 		DF53E30F1B67389E00738E06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF53E30E1B67389E00738E06 /* main.m */; };
 		DF53E3121B67389E00738E06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF53E3111B67389E00738E06 /* AppDelegate.m */; };
 		DF53E3151B67389E00738E06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF53E3141B67389E00738E06 /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF46A64A1B673A6B003A3B0E /* WechatAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WechatAccess.m; sourceTree = "<group>"; };
+		DF46A64B1B673A6B003A3B0E /* WechatAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAccess.h; sourceTree = "<group>"; };
 		DF53E3091B67389E00738E06 /* Wechat-OAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wechat-OAuth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF53E30D1B67389E00738E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF53E30E1B67389E00738E06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 		DF53E30B1B67389E00738E06 /* Wechat-OAuth */ = {
 			isa = PBXGroup;
 			children = (
+				DF46A64B1B673A6B003A3B0E /* WechatAccess.h */,
+				DF46A64A1B673A6B003A3B0E /* WechatAccess.m */,
 				DF53E3101B67389E00738E06 /* AppDelegate.h */,
 				DF53E3111B67389E00738E06 /* AppDelegate.m */,
 				DF53E3131B67389E00738E06 /* ViewController.h */,
@@ -238,6 +243,7 @@
 				DF53E3151B67389E00738E06 /* ViewController.m in Sources */,
 				DF53E3121B67389E00738E06 /* AppDelegate.m in Sources */,
 				DF53E30F1B67389E00738E06 /* main.m in Sources */,
+				DF46A64C1B673A6B003A3B0E /* WechatAccess.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WechatAccess.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)login:(id)sender {
+    [[WechatAccess defaultAccess] login:^(BOOL succeeded, id object) {
+        [_textField setText:[NSString stringWithFormat:@"%@",object]];
+    }];
 }
 
 @end
