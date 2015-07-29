@@ -122,13 +122,11 @@
     CGFloat compressionQuality = 1.f;
     NSData * imageData = UIImageJPEGRepresentation(image, compressionQuality);
     while (imageData.length > 32768) {
-        if (compressionQuality > 0.2) {
-            compressionQuality -= 0.2;
-            imageData = UIImageJPEGRepresentation(image, compressionQuality);
-        }
+        compressionQuality *= 0.5;
+        imageData = UIImageJPEGRepresentation(image, compressionQuality);
     }
     
-    [message setThumbImage:[UIImage imageWithData:imageData]];
+    [message setThumbData:imageData];
     
     WXWebpageObject *ext = [WXWebpageObject object];
     ext.webpageUrl = pageUrl;
