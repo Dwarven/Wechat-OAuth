@@ -118,7 +118,17 @@
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = title;
     message.description = description;
-    [message setThumbImage:image];
+    
+    CGFloat compressionQuality = 1.f;
+    NSData * imageData = UIImageJPEGRepresentation(image, compressionQuality);
+    while (imageData.length > 32768) {
+        if (compressionQuality > 0.2) {
+            compressionQuality -= 0.2;
+            imageData = UIImageJPEGRepresentation(image, compressionQuality);
+        }
+    }
+    
+    [message setThumbImage:[UIImage imageWithData:imageData]];
     
     WXWebpageObject *ext = [WXWebpageObject object];
     ext.webpageUrl = pageUrl;
