@@ -38,6 +38,10 @@
     return [WXApi handleOpenURL:url delegate:[WechatAccess defaultAccess]];
 }
 
++ (BOOL)isWechatAppInstalled{
+    return [WXApi isWXAppInstalled];
+}
+
 - (void)onReq:(BaseReq *)req{
     
 }

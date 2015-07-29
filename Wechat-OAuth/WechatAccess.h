@@ -16,6 +16,8 @@
 
 + (BOOL)handleOpenURL:(NSURL *)url;
 
++ (BOOL)isWechatAppInstalled;
+
 - (void)login:(void(^)(BOOL succeeded, id object))result;
 
 - (void)shareWithWebviewInTimeLineOrNot:(BOOL)inOrNot

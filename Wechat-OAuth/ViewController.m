@@ -26,9 +26,13 @@
 }
 
 - (IBAction)login:(id)sender {
-    [[WechatAccess defaultAccess] login:^(BOOL succeeded, id object) {
-        [_textField setText:[NSString stringWithFormat:@"%@",object]];
-    }];
+    if ([WechatAccess isWechatAppInstalled]) {
+        [[WechatAccess defaultAccess] login:^(BOOL succeeded, id object) {
+            [_textField setText:[NSString stringWithFormat:@"%@",object]];
+        }];
+    } else {
+        [_textField setText:@"Wechat not installed!"];
+    }
 }
 
 @end
