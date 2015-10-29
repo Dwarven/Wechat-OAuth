@@ -148,28 +148,28 @@
 }
 
 - (void)getUserInfoWith:(NSString *)code{
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
     [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
     [manager POST:@"https://api.weixin.qq.com/sns/oauth2/access_token"
        parameters:@{@"appid" : WECHAT_APP_ID,
                     @"secret" : WECHAT_APP_SECRET,
                     @"grant_type" : @"authorization_code",
                     @"code" : code}
-          success:^(AFHTTPRequestOperation *operation,id responseObject) {
+          success:^(NSURLSessionDataTask *task,id responseObject) {
               if ([responseObject isKindOfClass:[NSData class]]) {
                   responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
               }
               [manager GET:@"https://api.weixin.qq.com/sns/userinfo"
                 parameters:responseObject
-                   success:^(AFHTTPRequestOperation *operation,id responseObject) {
+                   success:^(NSURLSessionDataTask *task,id responseObject) {
                        if ([responseObject isKindOfClass:[NSData class]]) {
                            responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
                        }
                        _result(YES, responseObject);
-                   } failure:^(AFHTTPRequestOperation *operation,NSError *error) {
+                   } failure:^(NSURLSessionDataTask *task,NSError *error) {
                        
                    }];
-          } failure:^(AFHTTPRequestOperation *operation,NSError *error) {
+          } failure:^(NSURLSessionDataTask *task,NSError *error) {
               
           }];
 }
